@@ -28,8 +28,8 @@ jobs:
         - name: Test solution
           run: |
             ~/apps/dotCover/dotnet-dotCover dotnet --output=DetailedXML.xml                --ReportType=DetailedXML -- test Calculator/Calculator.sln
-            ~/apps/dotCover/dotnet-dotCover dotnet --output=json_coverage_result.json      --ReportType=JSON        -- test Calculator/Calculator.sln
-            #~/apps/dotCover/dotnet-dotCover dotnet --output=xml_coverage_result.xml        --ReportType=XML         -- test Calculator/Calculator.sln
+            #~/apps/dotCover/dotnet-dotCover dotnet --output=json_coverage_result.json      --ReportType=JSON        -- test Calculator/Calculator.sln
+            ~/apps/dotCover/dotnet-dotCover dotnet --output=xml_coverage_result.xml        --ReportType=XML         -- test Calculator/Calculator.sln
             #~/apps/dotCover/dotnet-dotCover dotnet --output=NDependXML_coverage_result.xml --ReportType=NDependXML  -- test Calculator/Calculator.sln
             #~/apps/dotCover/dotnet-dotCover dotnet --output=SummaryXML_coverage_result.xml --ReportType=SummaryXML  -- test Calculator/Calculator.sln
         - name: Upload coverage to Codacy
