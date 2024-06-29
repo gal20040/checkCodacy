@@ -21,6 +21,8 @@ jobs:
           run: dotnet build Calculator/Calculator.sln --no-incremental
         #- name: Run tests and collect coverage
         #  run: pytest --cov app ${{ env.CODECOV_ATS_TESTS }}
+        - name: Install dotCover
+          run: mkdir -p ~/apps/dotCover/; dotnet tool install JetBrains.dotCover.CommandLineTools --tool-path ~/apps/dotCover/
         - name: Upload coverage to Codecov
           uses: codecov/codecov-action@v4
           with:
