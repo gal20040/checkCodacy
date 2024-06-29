@@ -18,7 +18,7 @@ jobs:
         #apt-get update && install -y dotnet-sdk-8.0; dotnet --version
           run: dotnet --version
         - name: Build solution
-          run: dotnet build ./ConsoleApplication1/Calculator.sln --no-incremental
+          run: dotnet build ./Calculator/Calculator.sln --no-incremental
         #- name: Run tests and collect coverage
         #  run: pytest --cov app ${{ env.CODECOV_ATS_TESTS }}
         - name: Upload coverage to Codecov
