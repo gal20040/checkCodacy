@@ -14,8 +14,9 @@ jobs:
         #    python-version: '3.10'
         #- name: Install dependencies
         #  run: pip install -r requirements.txt
-        - name: Install dotnet
-          run: apt-get update && install -y dotnet-sdk-8.0; dotnet --version
+        - name: Check dotnet version
+        #apt-get update && install -y dotnet-sdk-8.0; dotnet --version
+          run: dotnet --version
         - name: Build solution
           run: dotnet build ./ConsoleApplication1/Calculator.sln --no-incremental
         #- name: Run tests and collect coverage
