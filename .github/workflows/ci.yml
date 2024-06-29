@@ -25,6 +25,10 @@ jobs:
           run: mkdir -p ~/apps/dotCover/; dotnet tool install JetBrains.dotCover.CommandLineTools --tool-path ~/apps/dotCover/
         - name: Test solution
           run: ~/apps/dotCover/dotnet-dotCover dotnet --output=DetailedXML.xml --ReportType=DetailedXML -- test Calculator/Calculator.sln
+        - name: Upload coverage to Codacy
+          run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r DetailedXML.xml
+          env:
+            CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         - name: Upload coverage to Codecov
           uses: codecov/codecov-action@v4
           with:
